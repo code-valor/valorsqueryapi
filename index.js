@@ -23,7 +23,7 @@ app.get($WEBAPISTRING + '/queryserver/:ip::port', function(req, res) {
     });
 });
 
-const $WEBAPIPORT = process.env.webapiport;
+const $WEBAPIPORT = process.env.webapiport || process.env.PORT;
 
 app.listen($WEBAPIPORT, () => {
     console.log('Web API server listening on PORT ' + $WEBAPIPORT);
